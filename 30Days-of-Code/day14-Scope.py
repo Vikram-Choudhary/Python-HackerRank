@@ -4,9 +4,8 @@ class Difference:
 
         # Add your code here
     def computeDifference(self):
-        self.__elements.sort()  # Sort Array to get min/max value at first and last postion
-        self.maximumDifference = self.__elements[len(
-            self.__elements)-1] - self.__elements[0]  # To find max difference between min & max value
+        self.maximumDifference = max(self.__elements)-min(self.__elements)
+        # To find max difference between min & max value
 # End of Difference class
 
 
