@@ -556,4 +556,103 @@ let rotate = function () {
 //     font-size: 24px;
 // }
 
+
+
 //  Day 9: Binary Calculator --> 3 files
+
+//index.html --> file
+
+// <!DOCTYPE html>
+// <html>
+//     <head>
+//         <meta charset="utf-8">
+//         <title>Binary Calculator</title>
+//         <link rel="stylesheet" href="css/binaryCalculator.css" type="text/css">
+//     </head>
+//     <body>
+//         <script src="js/binaryCalculator.js" type="text/javascript"></script>
+//         <div id='res'></div>
+//         <div id='btns'>
+//             <button id='btn0' onclick="addNum(0)">0</button>
+//             <button id='btn1' onclick="addNum(1)">1</button>
+//             <button id="btnClr" onclick="clearArea()">C</button>
+//             <button id="btnEql" onclick="calculateVal()">=</button>
+//             <button id="btnSum" onclick="addNum('+')">+</button>
+//             <button id="btnSub" onclick="addNum('-')">-</button>
+//             <button id="btnMul" onclick="addNum('*')">*</button>
+//             <button id="btnDiv" onclick="addNum('/')">/</button>
+//         </div>
+//     </body>
+// </html>
+
+//js/binaryCalculator.js --> file
+
+function calculateVal() {
+    values = document.getElementById('res').innerHTML;
+    splitValues = values.match(/[* / \- +]/);
+
+    operatorPos = splitValues.index;
+    p = splitValues[0];
+    firstVal = parseInt(values.substr(0, operatorPos), 2);
+    secondVal = parseInt(values.substr(operatorPos + 1, values.size), 2);
+    console.log(p);
+    console.log(firstVal);
+    console.log(secondVal);
+    if (p == '+') {
+        console.log((firstVal + secondVal));
+        val = (firstVal + secondVal).toString(2);
+    } else if (p == '-') {
+        val = (firstVal - secondVal).toString(2);
+    } else if (p == '*') {
+        val = (firstVal * secondVal).toString(2);
+    } else {
+        val = (firstVal / secondVal).toString(2);
+    }
+    console.log(val);
+    document.getElementById('res').innerHTML = val;
+}
+
+function addNum(p) {
+    currentVal = document.getElementById('res').innerHTML;
+    newVal = currentVal + p;
+    document.getElementById('res').innerHTML = newVal;
+}
+
+function clearArea() {
+    document.getElementById('res').innerHTML = '';
+}
+
+//js/binaryCalculator.css --> file
+
+// body {
+//     width: 33 %;
+// }
+
+// #res {
+//     background - color: lightgray;
+//     border: solid;
+//     height: 48px;
+//     font - size: 20px;
+// }
+
+// #btn0, #btn1 {
+//     background - color: lightgreen;
+//     color: brown;
+// }
+
+// #btnClr, #btnEql {
+//     background - color: darkgreen;
+//     color: white;
+// }
+
+// #btnSum, #btnSub, #btnMul, #btnDiv {
+//     background - color: black;
+//     color: red;
+// }
+
+// #btns > button {
+//     width: 25 %; height: 36px; font - size: 18px; margin: 0px; float: left;
+// }
+
+
+//  Thank You !
