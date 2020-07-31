@@ -292,3 +292,15 @@ mylist.display(head)
 
 
 # Day 16: Exceptions - String to Integer
+
+import sys
+
+S = input().strip()
+
+try: 
+        print(int(S))
+except:
+        print("Bad String")
+
+
+# Day 17: More Exceptions
