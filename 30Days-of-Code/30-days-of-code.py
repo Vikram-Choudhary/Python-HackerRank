@@ -306,3 +306,43 @@ for i in range(T):
 
 
 # Day 18: Queues and Stacks
+
+class Solution:
+    def __init__(self):
+        self.stack = list()
+        self.queue = list()
+
+    def pushCharacter(self, char):
+        self.stack.append(char)
+
+    def popCharacter(self):
+        return self.stack.pop(-1)
+
+    def enqueueCharacter(self, char):
+        self.queue.append(char)
+
+    def dequeueCharacter(self):
+        return self.queue.pop(0)
+
+
+# Day 19: Interfaces
+
+class AdvancedArithmetic(object):
+    def divisorSum(n):
+        raise NotImplementedError
+
+
+class Calculator(AdvancedArithmetic):
+    def divisorSum(self, n):
+        fact = []
+        for i in range(1, n+1):
+            if n % i == 0:
+                fact.append(i)
+        return sum(fact)
+
+
+n = int(input())
+my_calculator = Calculator()
+s = my_calculator.divisorSum(n)
+print("I implemented: " + type(my_calculator).__bases__[0].__name__)
+print(s)
