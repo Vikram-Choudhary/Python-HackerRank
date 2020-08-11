@@ -346,3 +346,26 @@ my_calculator = Calculator()
 s = my_calculator.divisorSum(n)
 print("I implemented: " + type(my_calculator).__bases__[0].__name__)
 print(s)
+
+
+# Day 20: Sorting
+
+def sortArr(arr):
+    count_swap = 0
+    while True:
+        for i in range(n-1):
+            if arr[i+1] < arr[i]:
+                count_swap += 1
+                arr[i+1], a[i] = a[i], a[i+1]
+                break
+        else:
+            break
+    return [count_swap, arr]
+
+
+n = int(input().strip())
+a = list(map(int, input().strip().split(' ')))
+result = sortArr(a)
+print("Array is sorted in", result[0], "swaps.")
+print("First Element:", result[1][0])
+print("Last Element:", result[1][-1])
