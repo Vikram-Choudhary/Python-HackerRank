@@ -369,3 +369,21 @@ result = sortArr(a)
 print("Array is sorted in", result[0], "swaps.")
 print("First Element:", result[1][0])
 print("Last Element:", result[1][-1])
+
+
+# Day 21: Generics
+
+/**
+*    Method Name: printArray
+*    Print each element of the generic array on a new line. Do not return anything.
+*    @ param A generic array
+**/
+
+// Write your code here
+public static < E > void printArray(E[] generic){
+    for(E element: generic){
+        System.out.println(element);}
+}
+
+
+# Day 22: Binary Search Trees
