@@ -387,3 +387,13 @@ public static < E > void printArray(E[] generic){
 
 
 # Day 22: Binary Search Trees
+
+def getHeight(self, root):
+    # Write your code here
+    if root is None:
+        return -1
+    else:
+        return 1 + max(self.getHeight(root.left), self.getHeight(root.right))
+
+
+# Day 23:
