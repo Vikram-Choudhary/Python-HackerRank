@@ -382,7 +382,7 @@ print("Last Element:", result[1][-1])
 // Write your code here
 public static < E > void printArray(E[] generic){
     for(E element: generic){
-        System.out.println(element); }
+        System.out.println(element);}
 }
 
 
@@ -397,3 +397,17 @@ def getHeight(self, root):
 
 
 # Day 23: BST Level-Order Traversal
+
+def levelOrder(self, root):
+    # Write your code here
+    queue = [root]if root else[]
+    while queue:
+        node = queue.pop()
+        print(node.data, end=" ")
+        if node.left:
+            queue.insert(0, node.left)
+        if node.right:
+            queue.insert(0, node.right)
+
+
+# Day 24: More Linked Lists
