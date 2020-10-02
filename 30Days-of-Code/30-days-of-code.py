@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
 # Day 11: 2D Arrays
 
-def max_of_hourglass(arr):
+def max_of_hourglass(arr):                         # Easy to uderstand and Simple way to solve this problem. Have a look.
     res = []
     for row in range(len(arr) - 2):
         for col in range(len(arr) - 2):
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 
     for _ in range(6):
         arr.append(list(map(int, input().rstrip().split())))
-    print(max_of_hourglass(arr))
+    print(max_of_hourglass(arr))                  
 
 
 # Day 12: Inheritance
