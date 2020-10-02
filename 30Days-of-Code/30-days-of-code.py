@@ -153,25 +153,26 @@ if __name__ == '__main__':
 
 # Day 11: 2D Arrays
 
-
-def maxOfHourGlass(arr):
-    result = 0
-    sumOfHourGlass = 0
-    for i in range(0, 4):
-        for j in range(0, 4):
-            sumOfHourGlass = sum(arr[i][j:j+3]) + \
-                sum(arr[i+2][j:j+3])+arr[i+1][j+1]
-            if(sumOfHourGlass > result or (i == 0 and j == 0)):
-                result = sumOfHourGlass
-    return result
-
+def max_of_hourglass(arr):
+    res = []
+    for row in range(len(arr) - 2):
+        for col in range(len(arr) - 2):
+            r1 = arr[row][col]
+            r2 = arr[row][col + 1]
+            r3 = arr[row][col + 2]
+            r4 = arr[row + 1][col + 1]
+            r5 = arr[row + 2][col]
+            r6 = arr[row + 2][col + 1]
+            r7 = arr[row + 2][col + 2]
+            res.append(r1 + r2 + r3 + r4 + r5 + r6 + r7)
+    return max(res)
 
 if __name__ == '__main__':
     arr = []
 
     for _ in range(6):
         arr.append(list(map(int, input().rstrip().split())))
-print(maxOfHourGlass(arr))
+    print(max_of_hourglass(arr))
 
 
 # Day 12: Inheritance
